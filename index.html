@@ -1,0 +1,430 @@
+
+</html><!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EduCore — Student Management Portal</title>
+<meta name="description" content="EduCore Student Management Portal — a front-end demo school management dashboard with students, teachers, attendance, exams, fees and reports." />
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+</head>
+<body>
+
+<!-- ================= SVG ICON SPRITE (no external icon library needed) ================= -->
+<svg style="display:none" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="i-grid"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></g>
+    <g id="i-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
+    <g id="i-cap"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V18c0 1.2 2.7 3 6 3s6-1.8 6-3v-5.5"/></g>
+    <g id="i-clip"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></g>
+    <g id="i-file"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></g>
+    <g id="i-award"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></g>
+    <g id="i-layers"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></g>
+    <g id="i-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></g>
+    <g id="i-card"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></g>
+    <g id="i-pencil"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></g>
+    <g id="i-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></g>
+    <g id="i-cal"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></g>
+    <g id="i-mega"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></g>
+    <g id="i-chart"><path d="M12 20V10M18 20V4M6 20v-4"/></g>
+    <g id="i-gear"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.6 1.6 0 0 0-1.82-.33 1.6 1.6 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.6 1.6 0 0 0-1-1.51 1.6 1.6 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.6 1.6 0 0 0 .33-1.82 1.6 1.6 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.6 1.6 0 0 0 9 4.6 1.6 1.6 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.6 1.6 0 0 0 1 1.51 1.6 1.6 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.6 1.6 0 0 0-.33 1.82V9a1.6 1.6 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.6 1.6 0 0 0-1.51 1z"/></g>
+    <g id="i-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></g>
+    <g id="i-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></g>
+    <g id="i-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g>
+    <g id="i-moon"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></g>
+    <g id="i-menu"><path d="M3 6h18M3 12h18M3 18h18"/></g>
+    <g id="i-x"><path d="M18 6 6 18M6 6l12 12"/></g>
+    <g id="i-plus"><path d="M12 5v14M5 12h14"/></g>
+    <g id="i-trash"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></g>
+    <g id="i-eye"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></g>
+    <g id="i-down"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></g>
+    <g id="i-print"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></g>
+    <g id="i-chevL"><path d="m15 18-6-6 6-6"/></g>
+    <g id="i-chevR"><path d="m9 18 6-6-6-6"/></g>
+    <g id="i-chevD"><path d="m6 9 6 6 6-6"/></g>
+    <g id="i-check"><path d="m20 6-11 11-5-5"/></g>
+    <g id="i-alert"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></g>
+    <g id="i-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></g>
+    <g id="i-clock"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></g>
+    <g id="i-mail"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></g>
+    <g id="i-phone"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></g>
+    <g id="i-pin"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g>
+    <g id="i-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></g>
+    <g id="i-refresh"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></g>
+    <g id="i-clock2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g>
+    <g id="i-home"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></g>
+    <g id="i-save"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></g>
+    <g id="i-star"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></g>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="brand">
+      <span class="brand-logo" id="brandLogo">EC</span>
+      <span class="brand-text">
+        <strong id="brandName">EduCore</strong>
+        <small>Student Portal</small>
+      </span>
+      <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24"><use href="#i-x"/></svg>
+      </button>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <p class="nav-group">Overview</p>
+      <a href="#dashboard" class="nav-link active" data-nav="dashboard"><svg viewBox="0 0 24 24"><use href="#i-grid"/></svg><span>Dashboard</span></a>
+
+      <p class="nav-group">People</p>
+      <a href="#students" class="nav-link" data-nav="students"><svg viewBox="0 0 24 24"><use href="#i-users"/></svg><span>Students</span></a>
+      <a href="#teachers" class="nav-link" data-nav="teachers"><svg viewBox="0 0 24 24"><use href="#i-cap"/></svg><span>Teachers</span></a>
+
+      <p class="nav-group">Academics</p>
+      <a href="#attendance" class="nav-link" data-nav="attendance"><svg viewBox="0 0 24 24"><use href="#i-clip"/></svg><span>Attendance</span></a>
+      <a href="#examinations" class="nav-link" data-nav="examinations"><svg viewBox="0 0 24 24"><use href="#i-file"/></svg><span>Examinations</span></a>
+      <a href="#results" class="nav-link" data-nav="results"><svg viewBox="0 0 24 24"><use href="#i-award"/></svg><span>Results</span></a>
+      <a href="#classes" class="nav-link" data-nav="classes"><svg viewBox="0 0 24 24"><use href="#i-layers"/></svg><span>Classes</span></a>
+      <a href="#subjects" class="nav-link" data-nav="subjects"><svg viewBox="0 0 24 24"><use href="#i-book"/></svg><span>Subjects</span></a>
+
+      <p class="nav-group">Administration</p>
+      <a href="#fees" class="nav-link" data-nav="fees"><svg viewBox="0 0 24 24"><use href="#i-card"/></svg><span>Fees</span></a>
+      <a href="#homework" class="nav-link" data-nav="homework"><svg viewBox="0 0 24 24"><use href="#i-pencil"/></svg><span>Homework</span></a>
+      <a href="#resources" class="nav-link" data-nav="resources"><svg viewBox="0 0 24 24"><use href="#i-folder"/></svg><span>Study Resources</span></a>
+      <a href="#timetable" class="nav-link" data-nav="timetable"><svg viewBox="0 0 24 24"><use href="#i-clock2"/></svg><span>Timetable</span></a>
+      <a href="#calendar" class="nav-link" data-nav="calendar"><svg viewBox="0 0 24 24"><use href="#i-cal"/></svg><span>Calendar</span></a>
+
+      <p class="nav-group">Communication</p>
+      <a href="#announcements" class="nav-link" data-nav="announcements"><svg viewBox="0 0 24 24"><use href="#i-mega"/></svg><span>Announcements</span></a>
+
+      <p class="nav-group">System</p>
+      <a href="#reports" class="nav-link" data-nav="reports"><svg viewBox="0 0 24 24"><use href="#i-chart"/></svg><span>Reports</span></a>
+      <a href="#settings" class="nav-link" data-nav="settings"><svg viewBox="0 0 24 24"><use href="#i-gear"/></svg><span>Settings</span></a>
+    </nav>
+
+    <div class="sidebar-foot">
+      <button class="btn btn-ghost btn-block" id="collapseBtn" aria-pressed="false">
+        <svg viewBox="0 0 24 24"><use href="#i-chevL"/></svg><span>Collapse menu</span>
+      </button>
+      <div class="demo-pill"><span class="dot"></span> Demo data · no backend</div>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <!-- ================= MAIN AREA ================= -->
+  <div class="main" id="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><use href="#i-menu"/></svg>
+        </button>
+        <div class="page-title-wrap">
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageCrumb">School overview</p>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <div class="search-wrap" id="searchWrap">
+          <svg class="search-icon" viewBox="0 0 24 24"><use href="#i-search"/></svg>
+          <input type="search" id="globalSearch" placeholder="Search students, teachers, notices…" aria-label="Global search" autocomplete="off" />
+          <div class="search-results" id="searchResults" hidden></div>
+        </div>
+
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle light / dark theme">
+          <svg viewBox="0 0 24 24" id="themeIcon"><use href="#i-moon"/></svg>
+        </button>
+
+        <div class="notif-wrap">
+          <button class="icon-btn" id="notifBtn" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24"><use href="#i-bell"/></svg>
+            <span class="badge-dot" id="notifCount" hidden>0</span>
+          </button>
+          <div class="dropdown notif-panel" id="notifPanel" hidden>
+            <div class="dropdown-head">
+              <strong>Notifications</strong>
+              <button class="link-btn" data-action="notif-read-all">Mark all read</button>
+            </div>
+            <div class="dropdown-body" id="notifList"></div>
+            <div class="dropdown-foot">In-app demo notifications only — no email or push delivery.</div>
+          </div>
+        </div>
+
+        <div class="profile-wrap">
+          <button class="profile-btn" id="profileBtn" aria-expanded="false" aria-haspopup="menu">
+            <span class="avatar" id="profileAvatar">AD</span>
+            <span class="profile-meta"><strong id="profileName">Admin Demo</strong><small>Administrator</small></span>
+            <svg viewBox="0 0 24 24"><use href="#i-chevD"/></svg>
+          </button>
+          <div class="dropdown profile-panel" id="profilePanel" hidden>
+            <button class="dropdown-item" data-nav="settings"><svg viewBox="0 0 24 24"><use href="#i-gear"/></svg> Settings</button>
+            <button class="dropdown-item" data-nav="profile"><svg viewBox="0 0 24 24"><use href="#i-user"/></svg> My profile</button>
+            <button class="dropdown-item" data-action="reset-demo"><svg viewBox="0 0 24 24"><use href="#i-refresh"/></svg> Reset demo data</button>
+          </div>
+        </div>
+      </div>
+      <div class="load-bar" id="loadBar"></div>
+    </header>
+
+    <main class="content" id="main-content">
+
+      <!-- ---------- DASHBOARD ---------- -->
+      <section class="page active" id="page-dashboard" aria-label="Dashboard">
+        <div class="page-head">
+          <div>
+            <h2>Welcome back 👋</h2>
+            <p>Here is what is happening at <span id="dashSchoolName">your school</span> today.</p>
+          </div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-all"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Backup JSON</button>
+            <button class="btn btn-primary" data-action="student-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add student</button>
+          </div>
+        </div>
+
+        <div class="alert info" role="note">
+          <svg viewBox="0 0 24 24"><use href="#i-info"/></svg>
+          <span><strong>Demo notice:</strong> every record in this portal is sample data stored in your own browser (localStorage). No real emails, payments or cloud sync are involved.</span>
+        </div>
+
+        <div class="stat-grid" id="dashStats"></div>
+
+        <div class="grid-2">
+          <article class="card">
+            <header class="card-head"><h3>Attendance trend</h3><span class="chip soft">Last 7 school days</span></header>
+            <div class="chart-wrap"><canvas id="chartAttendance" role="img" aria-label="Attendance percentage for the last 7 school days"></canvas></div>
+          </article>
+          <article class="card">
+            <header class="card-head"><h3>Students per class</h3><span class="chip soft">Live count</span></header>
+            <div class="chart-wrap"><canvas id="chartClass" role="img" aria-label="Number of students in each class"></canvas></div>
+          </article>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <header class="card-head"><h3>Quick actions</h3></header>
+            <div class="quick-grid" id="quickActions"></div>
+          </article>
+          <article class="card">
+            <header class="card-head"><h3>Grade distribution</h3><span class="chip soft">Latest exam</span></header>
+            <div class="chart-wrap sm"><canvas id="chartGrades" role="img" aria-label="Grade distribution"></canvas></div>
+            <div class="legend" id="gradeLegend"></div>
+          </article>
+          <article class="card">
+            <header class="card-head"><h3>Fee collection</h3><span class="chip soft">This session</span></header>
+            <div class="fee-mini" id="feeMini"></div>
+            <div class="chart-wrap xs"><canvas id="chartFees" role="img" aria-label="Fee collected vs pending"></canvas></div>
+          </article>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <header class="card-head"><h3>Recent activity</h3><span class="chip soft">Auto-generated</span></header>
+            <ul class="activity-list" id="activityList"></ul>
+          </article>
+          <article class="card">
+            <header class="card-head"><h3>Upcoming exams &amp; events</h3>
+              <button class="link-btn" data-nav="calendar">View calendar</button></header>
+            <div id="upcomingList"></div>
+          </article>
+        </div>
+
+        <article class="card">
+          <header class="card-head"><h3>Notice board</h3><button class="link-btn" data-nav="announcements">All announcements</button></header>
+          <div class="notice-grid" id="noticeBoard"></div>
+        </article>
+      </section>
+
+      <!-- ---------- STUDENTS ---------- -->
+      <section class="page" id="page-students" aria-label="Students">
+        <div class="page-head">
+          <div><h2>Students</h2><p>Add, view, edit and remove student records.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-students"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+            <button class="btn btn-primary" data-action="student-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add student</button>
+          </div>
+        </div>
+        <div id="studentsBody"></div>
+      </section>
+
+      <!-- ---------- TEACHERS ---------- -->
+      <section class="page" id="page-teachers" aria-label="Teachers">
+        <div class="page-head">
+          <div><h2>Teachers</h2><p>Staff directory, subject and class assignments.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-teachers"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+            <button class="btn btn-primary" data-action="teacher-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add teacher</button>
+          </div>
+        </div>
+        <div id="teachersBody"></div>
+      </section>
+
+      <!-- ---------- ATTENDANCE ---------- -->
+      <section class="page" id="page-attendance" aria-label="Attendance">
+        <div class="page-head">
+          <div><h2>Attendance</h2><p>Mark daily attendance, review history and percentages.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-attendance"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+          </div>
+        </div>
+        <div id="attendanceBody"></div>
+      </section>
+
+      <!-- ---------- EXAMINATIONS ---------- -->
+      <section class="page" id="page-examinations" aria-label="Examinations">
+        <div class="page-head">
+          <div><h2>Examinations</h2><p>Create exams, set subjects, maximum marks and enter scores.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="exam-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> New examination</button>
+          </div>
+        </div>
+        <div id="examsBody"></div>
+      </section>
+
+      <!-- ---------- RESULTS ---------- -->
+      <section class="page" id="page-results" aria-label="Results">
+        <div class="page-head">
+          <div><h2>Results</h2><p>Totals, percentages, grades and printable report cards.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-results"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+            <button class="btn btn-ghost" data-action="print-results"><svg viewBox="0 0 24 24"><use href="#i-print"/></svg> Print report</button>
+          </div>
+        </div>
+        <div id="resultsBody"></div>
+      </section>
+
+      <!-- ---------- CLASSES ---------- -->
+      <section class="page" id="page-classes" aria-label="Classes">
+        <div class="page-head">
+          <div><h2>Classes</h2><p>Class groups, sections and class teacher assignments.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="class-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add class</button>
+          </div>
+        </div>
+        <div id="classesBody"></div>
+      </section>
+
+      <!-- ---------- SUBJECTS ---------- -->
+      <section class="page" id="page-subjects" aria-label="Subjects">
+        <div class="page-head">
+          <div><h2>Subjects</h2><p>Subject catalogue and class allocation.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="subject-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add subject</button>
+          </div>
+        </div>
+        <div id="subjectsBody"></div>
+      </section>
+
+      <!-- ---------- FEES ---------- -->
+      <section class="page" id="page-fees" aria-label="Fees">
+        <div class="page-head">
+          <div><h2>Fee management</h2><p>Demo fee records, receipts and payment history.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="export-fees"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+            <button class="btn btn-primary" data-action="fee-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> New fee record</button>
+          </div>
+        </div>
+        <div id="feesBody"></div>
+      </section>
+
+      <!-- ---------- HOMEWORK ---------- -->
+      <section class="page" id="page-homework" aria-label="Homework">
+        <div class="page-head">
+          <div><h2>Homework</h2><p>Assignments by class and subject with due dates.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="homework-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Assign homework</button>
+          </div>
+        </div>
+        <div id="homeworkBody"></div>
+      </section>
+
+      <!-- ---------- RESOURCES ---------- -->
+      <section class="page" id="page-resources" aria-label="Study resources">
+        <div class="page-head">
+          <div><h2>Study resources</h2><p>Notes, worksheets and reference links.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="resource-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add resource</button>
+          </div>
+        </div>
+        <div id="resourcesBody"></div>
+      </section>
+
+      <!-- ---------- TIMETABLE ---------- -->
+      <section class="page" id="page-timetable" aria-label="Timetable">
+        <div class="page-head">
+          <div><h2>Timetable</h2><p>Weekly periods, subjects and teachers.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="print-timetable"><svg viewBox="0 0 24 24"><use href="#i-print"/></svg> Print</button>
+            <button class="btn btn-primary" data-action="period-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add period</button>
+          </div>
+        </div>
+        <div id="timetableBody"></div>
+      </section>
+
+      <!-- ---------- CALENDAR ---------- -->
+      <section class="page" id="page-calendar" aria-label="Calendar">
+        <div class="page-head">
+          <div><h2>Calendar</h2><p>Exam schedules, school events and holidays.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="event-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> Add event</button>
+          </div>
+        </div>
+        <div id="calendarBody"></div>
+      </section>
+
+      <!-- ---------- ANNOUNCEMENTS ---------- -->
+      <section class="page" id="page-announcements" aria-label="Announcements">
+        <div class="page-head">
+          <div><h2>Announcements</h2><p>Notice board and in-app notifications.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-primary" data-action="announce-add"><svg viewBox="0 0 24 24"><use href="#i-plus"/></svg> New announcement</button>
+          </div>
+        </div>
+        <div id="announcementsBody"></div>
+      </section>
+
+      <!-- ---------- REPORTS ---------- -->
+      <section class="page" id="page-reports" aria-label="Reports">
+        <div class="page-head">
+          <div><h2>Reports</h2><p>Summaries, charts and exports built from your demo records.</p></div>
+          <div class="page-head-actions">
+            <button class="btn btn-ghost" data-action="print-report"><svg viewBox="0 0 24 24"><use href="#i-print"/></svg> Print report</button>
+            <button class="btn btn-primary" data-action="export-report"><svg viewBox="0 0 24 24"><use href="#i-down"/></svg> Export CSV</button>
+          </div>
+        </div>
+        <div id="reportsBody"></div>
+      </section>
+
+      <!-- ---------- SETTINGS ---------- -->
+      <section class="page" id="page-settings" aria-label="Settings">
+        <div class="page-head">
+          <div><h2>Settings</h2><p>Branding, appearance and demo data controls.</p></div>
+        </div>
+        <div id="settingsBody"></div>
+      </section>
+
+      <!-- ---------- PROFILE (from profile menu) ---------- -->
+      <section class="page" id="page-profile" aria-label="My profile">
+        <div class="page-head"><div><h2>My profile</h2><p>Demo administrator account for this browser only.</p></div></div>
+        <div id="profileBody"></div>
+      </section>
+
+      <div class="empty-page" id="emptyState" hidden></div>
+    </main>
+
+    <footer class="app-footer">
+      <p><strong id="footSchool">EduCore</strong> · Student Management Portal — front-end demo build. Data lives in this browser only.</p>
+      <p class="muted">Not for production use with real student data.</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Modal + toast roots -->
+<div class="modal-root" id="modalRoot"></div>
+<div class="toast-root" id="toastRoot" aria-live="polite" aria-atomic="true"></div>
+<div class="print-area" id="printArea"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
